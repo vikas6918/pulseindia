@@ -17,7 +17,7 @@ export const BlogList = () => {
         .from('posts')
         .select(`
           *,
-          comments!inner(*)
+          comments(count)
         `)
         .order('published_at', { ascending: false });
 
@@ -34,14 +34,7 @@ export const BlogList = () => {
       const { data, error } = await query.limit(20);
 
       if (error) throw error;
-
-      // Transform data to include comment counts
-      const postsWithCommentCounts = data?.map(post => ({
-        ...post,
-        commentCount: post.comments?.length || 0
-      })) || [];
-
-      return postsWithCommentCounts;
+      return data;
     }
   });
 
@@ -126,7 +119,7 @@ export const BlogList = () => {
             author={post.author}
             published_at={post.published_at}
             views={post.views}
-            commentCount={post.commentCount}
+            commentCount={Array.isArray(post.comments) ? post.comments.length : 0}
           />
         ))}
       </div>

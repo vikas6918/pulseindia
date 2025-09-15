@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
-import { SocialShare } from "@/components/SocialShare";
 import { CommentsSection } from "@/components/CommentsSection";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useEffect } from "react";
@@ -47,10 +46,10 @@ export const BlogDetail = () => {
   });
 
   useEffect(() => {
-    if (post && slug && !incrementViewsMutation.isSuccess) {
+    if (post && slug) {
       incrementViewsMutation.mutate(slug);
     }
-  }, [post?.id]); // Only run when post ID changes
+  }, [post?.slug]); // Only run when post ID changes
 
   // Real-time subscription for view updates
   useEffect(() => {
@@ -285,16 +284,7 @@ export const BlogDetail = () => {
                 <div className="prose prose-lg max-w-none mb-8">
                   <p className="text-lg leading-relaxed">{post.description}</p>
                 </div>
-
-                <SocialShare 
-                  url={canonicalUrl} 
-                  title={post.title} 
-                  description={post.description} 
-                />
-
-                <div className="mt-8">
-                  <CommentsSection postId={post.id} />
-                </div>
+                <CommentsSection postid={post.id}/>
               </article>
             </main>
 
