@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { BlogList } from "@/components/BlogList";
 import { Sidebar } from "@/components/Sidebar";
+import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
 
 const Index = () => {
@@ -16,14 +17,14 @@ const Index = () => {
         <link rel="canonical" href={window.location.origin} />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background flex flex-col">
         <Header />
         
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-8 flex-1">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1">
               <div className="mb-8">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">Latest Indian News</h1>
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">Latest India's News</h1>
                 <p className="text-base lg:text-lg text-muted-foreground">
                   Stay updated with the latest breaking news and current affairs from India
                 </p>
@@ -37,6 +38,8 @@ const Index = () => {
             </aside>
           </div>
         </main>
+
+        <Footer />
       </div>
     </>
   );

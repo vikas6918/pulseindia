@@ -53,18 +53,19 @@ export const Header = () => {
             <Link to="/" className="text-foreground hover:text-primary transition-colors">
               Home
             </Link>
+            <Link to="/contact-us" className="text-foreground hover:text-primary transition-colors">
+              Contact Us
+            </Link>
           </nav>
 
           <Button
             onClick={handleFetchNews}
             disabled={isRefreshing}
             variant="outline"
-            size="sm"
-            className="flex items-center gap-2"
-          >
+            size="icon"
+            title={isRefreshing ? 'Fetching...' : 'Fetch News'}
+            >
             <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-            <span className="hidden sm:inline">{isRefreshing ? 'Fetching...' : 'Fetch News'}</span>
-            <span className="sm:hidden">Fetch</span>
           </Button>
         </div>
       </div>

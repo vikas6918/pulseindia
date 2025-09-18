@@ -1,7 +1,10 @@
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Eye, MessageSquare, Calendar } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Eye, MessageSquare, Calendar, Share2 } from "lucide-react";import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
+
+
 
 interface BlogCardProps {
   id: string;
@@ -25,11 +28,45 @@ export const BlogCard = ({
   views,
   commentCount = 0 
 }: BlogCardProps) => {
+  const { toast } = useToast();
   const publishedDate = new Date(published_at).toLocaleDateString('en-IN', {
     year: 'numeric',
     month: 'short',
     day: 'numeric'
   });
+
+  const handleShare = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const shareData = {
+      title: title,
+      text: description,
+      url: `${window.location.origin}/blog/${slug}`,
+      ...(image_url && { files: [] }) // Will be handled by the browser
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback: copy to clipboard
+        await navigator.clipboard.writeText(`${title}\n${shareData.url}`);
+        toast({
+          title: "Link copied!",
+          description: "Post link has been copied to clipboard",
+        });
+      }
+    } catch (error) {
+      if ((error as Error).name !== 'AbortError') {
+        toast({
+          title: "Share failed",
+          description: "Unable to share this post",
+          variant: "destructive",
+        });
+      }
+    }
+  };
 
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -77,6 +114,15 @@ export const BlogCard = ({
             <span>{commentCount}</span>
           </div>
         </div>
+        <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleShare}
+            className="h-auto p-1 hover:bg-accent"
+            title="Share post"
+          >
+            <Share2 className="h-3 w-3" />
+          </Button>
       </CardFooter>
     </Card>
   );
