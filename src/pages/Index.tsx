@@ -23,7 +23,7 @@ const Index = () => {
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1">
               <div className="mb-8">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">Latest Indian News</h1>
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">Latest India's News</h1>
                 <p className="text-base lg:text-lg text-muted-foreground">
                   Stay updated with the latest breaking news and current affairs from India
                 </p>
