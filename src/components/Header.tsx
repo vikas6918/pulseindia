@@ -62,7 +62,6 @@ export const Header = () => {
             onClick={handleFetchNews}
             disabled={isRefreshing}
             variant="outline"
-            size="sm"
             size="icon"
             title={isRefreshing ? 'Fetching...' : 'Fetch News'}
             >
