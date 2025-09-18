@@ -60,11 +60,10 @@ export const Header = () => {
             disabled={isRefreshing}
             variant="outline"
             size="sm"
-            className="flex items-center gap-2"
-          >
+            size="icon"
+            title={isRefreshing ? 'Fetching...' : 'Fetch News'}
+            >
             <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-            <span className="hidden sm:inline">{isRefreshing ? 'Fetching...' : 'Fetch News'}</span>
-            <span className="sm:hidden">Fetch</span>
           </Button>
         </div>
       </div>
