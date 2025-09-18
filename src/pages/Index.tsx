@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { BlogList } from "@/components/BlogList";
 import { Sidebar } from "@/components/Sidebar";
+import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
 
 const Index = () => {
@@ -16,10 +17,10 @@ const Index = () => {
         <link rel="canonical" href={window.location.origin} />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background flex flex-col">
         <Header />
         
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-8 flex-1">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1">
               <div className="mb-8">
@@ -37,6 +38,8 @@ const Index = () => {
             </aside>
           </div>
         </main>
+
+        <Footer />
       </div>
     </>
   );
