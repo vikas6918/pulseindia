@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { RefreshCw, Clock, Trophy } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 interface Match {
   id: string;
@@ -258,8 +259,9 @@ const CricketScores = () => {
             ) : (
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {matches.map((match) => (
-                  <Card key={match.id} className="hover:shadow-lg transition-shadow">
-                    <CardHeader className="pb-3">
+                  <Link key={match.id} to={`/match/${match.id}`}>
+                    <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                      <CardHeader className="pb-3">
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <CardTitle className="text-lg leading-tight mb-2">
@@ -305,6 +307,7 @@ const CricketScores = () => {
                       </div>
                     </CardContent>
                   </Card>
+                  </Link>
                 ))}
               </div>
             )}
