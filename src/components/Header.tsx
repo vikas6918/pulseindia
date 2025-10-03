@@ -58,6 +58,9 @@ export const Header = () => {
             <Link to="/cricket-scores" className="text-foreground hover:text-primary transition-colors">
               Cricket Scores
             </Link>
+            <Link to="/astrology" className="text-foreground hover:text-primary transition-colors">
+              Today's Astrology
+            </Link>
             <Link to="/contact-us" className="text-foreground hover:text-primary transition-colors">
               Contact Us
             </Link>
@@ -96,6 +99,13 @@ export const Header = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Cricket Scores
+                  </Link>
+                  <Link 
+                    to="/astrology" 
+                    className="text-lg text-foreground hover:text-primary transition-colors py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Today's Astrology
                   </Link>
                   <Link 
                     to="/contact-us" 
