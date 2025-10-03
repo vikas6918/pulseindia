@@ -11,6 +11,7 @@ import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ContactUs from "./pages/ContactUs";
 import CricketScores from "./pages/CricketScores";
+import MatchDetail from "./pages/MatchDetail";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cricket-scores" element={<CricketScores />} />
+            <Route path="/match/:matchId" element={<MatchDetail />} />
             <Route path="/contact-us" element={<ContactUs />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />            
