@@ -12,6 +12,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ContactUs from "./pages/ContactUs";
 import CricketScores from "./pages/CricketScores";
 import MatchDetail from "./pages/MatchDetail";
+import Astrology from "./pages/Astrology";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cricket-scores" element={<CricketScores />} />
             <Route path="/match/:matchId" element={<MatchDetail />} />
+            <Route path="/astrology" element={<Astrology />} />
             <Route path="/contact-us" element={<ContactUs />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />            
