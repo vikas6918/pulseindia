@@ -10,7 +10,7 @@ import { BlogDetail } from "./pages/BlogDetail";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ContactUs from "./pages/ContactUs";
-import { useEffect } from "react";
+import CricketScores from "./pages/CricketScores";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +43,7 @@ const App = () => {
             <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/cricket-scores" element={<CricketScores />} />
             <Route path="/contact-us" element={<ContactUs />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />            
