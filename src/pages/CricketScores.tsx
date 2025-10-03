@@ -46,8 +46,8 @@ const CricketScores = () => {
     if (isRefresh) setRefreshing(true);
     
     try {
-      // Using CricAPI free tier - you might need to replace with actual API
-      const response = await fetch('https://api.cricapi.com/v1/currentMatches?apikey=demo&offset=0');
+      // Using CricAPI with real API key
+      const response = await fetch('https://api.cricapi.com/v1/currentMatches?apikey=b40ef1eb-9e1c-4803-b0f2-6ca2a240a54a&offset=0');
       
       if (!response.ok) {
         throw new Error('Failed to fetch cricket data');
