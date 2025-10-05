@@ -14,7 +14,6 @@ const Index = () => {
         <meta property="og:title" content="PulseIndia - Latest Indian News & Updates" />
         <meta property="og:description" content="Stay updated with the latest Indian news, breaking stories, and current affairs." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href={window.location.origin} />
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">
