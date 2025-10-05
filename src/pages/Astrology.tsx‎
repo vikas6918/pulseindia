@@ -129,7 +129,6 @@ const Astrology = () => {
         <title>Today's Astrology - Daily Rashifal - PulseIndia</title>
         <meta name="description" content="Get your daily horoscope and rashifal predictions for all zodiac signs. Check today's astrology for love, career, health and more." />
         <meta name="keywords" content="astrology, horoscope, rashifal, zodiac signs, daily predictions, indian astrology" />
-        <link rel="canonical" href={`${window.location.origin}/astrology`} />
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">
