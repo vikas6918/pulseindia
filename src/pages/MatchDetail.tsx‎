@@ -191,7 +191,6 @@ const MatchDetail = () => {
       <Helmet>
         <title>{matchData.name} - Live Cricket Score - PulseIndia</title>
         <meta name="description" content={`Get live updates and detailed information for ${matchData.name}. View scores, player details, and match statistics.`} />
-        <link rel="canonical" href={`${window.location.origin}/match/${matchId}`} />
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">
