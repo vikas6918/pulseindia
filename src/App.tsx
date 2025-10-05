@@ -11,6 +11,7 @@ import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ContactUs from "./pages/ContactUs";
 import CricketScores from "./pages/CricketScores";
+import MatchDetail from "./pages/MatchDetail";
 import Astrology from "./pages/Astrology";
 
 const queryClient = new QueryClient();
